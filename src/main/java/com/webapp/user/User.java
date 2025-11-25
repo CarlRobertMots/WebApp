@@ -20,6 +20,8 @@ public class User {
     @Column(length = 45, nullable = false, name = "last_name")
     private String lastName;
 
+    private boolean enabled;
+
     public Integer getId() {
         return id;
     }
@@ -58,5 +60,22 @@ public class User {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    }
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 }
