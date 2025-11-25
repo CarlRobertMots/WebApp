@@ -25,4 +25,10 @@ public class UserService {
         }
         throw new UserNotFoundException("Could not find any users with ID" + id);
     }
+    public void delete(Integer id) throws Exception {
+        if(id == null || id <= 0 || repo.findById(id).isEmpty()){
+            throw new Exception("Could not find user with ID " + id);
+        }
+        repo.deleteById(id);
+    }
 }
